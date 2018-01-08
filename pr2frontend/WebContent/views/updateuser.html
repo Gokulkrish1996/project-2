@@ -1,0 +1,20 @@
+<span style="color:red" ng-if="error.code==1">{{error.message}}</span>
+<form>
+
+
+<pre>
+Enter Username : <input type="text" ng-model="user.username" disabled>
+<span style="color:red" ng-if="error.code==2">{{error.message}}</span>
+Enter Password : <input type="password" ng-model="user.password">
+Enter Firstname : <input type="text" ng-model="user.firstname">
+Enter Lastname: <input type="text" ng-model="user.lastname">
+Enter Email : <input type="email" ng-model="user.email">
+<span style="color:red" ng-if="error.code==3">{{error.message}}</span>
+Enter Phonenumber : <input type="text" ng-model="user.phonenumber">
+Select Role:
+<input type="radio" value="STUDENT" ng-model="user.role">Student
+<input type="radio" value="EMPLOYEE" ng-model="user.role">Employee
+<input type="radio" value="ALUMNI" ng-model="user.role">Alumni
+<input type="submit" value="Edit" ng-click="editUserProfile()"> <!-- 1 -->
+</pre>
+</form>

@@ -1,0 +1,16 @@
+<table>
+<thead>
+<tr>
+<th>FirstName</th>
+<th>LastName</th>
+<th>Image</th>
+</tr>
+</thead>
+<tbody >
+<tr ng-repeat="friend in friends">
+<td>{{friend.firstname}}</td>
+<td>{{friend.lastname}}</td>
+<td><img src="http://localhost:8085/pr2middleware/getimage/{{friend.username}}"alt="Image Not Available" height="60" width="60"></td>
+</tr>
+</tbody>
+</table>

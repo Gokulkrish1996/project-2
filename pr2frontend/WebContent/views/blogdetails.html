@@ -1,0 +1,42 @@
+ <h2>Blog Post Approval Form</h2>
+<div class="row">
+<div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<b>{{blogPost.blogTitle}}</b>
+<b>Created By:</b>{{blogPost.postedBy.firstname}}<br>
+<b>Created On:</b>{{blogPost.postedOn | date:'yyyy:MM:dd'}}<br>
+</div>
+<div class="panel-body">
+{{blogPost.blogContent}}
+</div>
+<a></a>
+<br>
+</div>
+</div>
+</div>
+<b>Number Of Likes</b> {{blogPost.likes}}
+<div ng-show="liked">
+<span class="glyphicon glyphicon-thumbs-up" style="color:blue" ng-click="updateLikes()"></span>
+</div>
+
+<div ng-show="!liked">
+<span class="glyphicon glyphicon-thumbs-up" style="color:black" ng-click="updateLikes()"></span>
+</div>
+Blog Comments
+<div class="container">
+             <textarea rows="4" cols="15" ng-model="commentText"></textarea>
+             <br>
+             <input type="submit" ng-click="addComment()" value="POST COMMENT">
+  </div>
+<div>
+<a href="" ng-click="showComments()"><b>{{blogPost.blogComments.length}} Comments</b></a>
+<ul ng-show="showComment" style="list-style:none">
+<li  ng-repeat="comment in blogPost.blogComments | orderBy:'-commentedBy'">
+             {{comment.commentText}}<br>
+             <b>Commented By</b>> {{comment.commentedBy.username}} &nbsp;
+            <b>Commented On</b>> {{comment.commentedOn | date : 'medium'}}
+</li>
+</ul>
+</div>
+

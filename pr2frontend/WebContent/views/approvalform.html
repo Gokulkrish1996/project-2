@@ -1,0 +1,27 @@
+<h2>Blog Post Approval Form</h2>
+<div class="row">
+<div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<b>Blog Title:{{blogPost.blogTitle}}</b><br>
+<b>Created By:</b>{{blogPost.postedBy.firstname}}<br>
+<b>Created On:</b>{{blogPost.postedOn | date:'yyyy:MM:dd'}}<br>
+</div>
+<div class="panel-body">
+{{blogPost.blogContent}}
+</div>
+</div>
+</div>
+</div>
+<form>
+<input type="radio" ng-model="blogPost.approved" value="true" ng-click="showRejectionTxt(false)">Approve
+<input type="radio" ng-model="blogPost.approved" value="false" ng-click="showRejectionTxt(true)">Reject
+<br>
+<div ng-show="isRejected">
+Enter Rejection Reason
+<input type="text" ng-model="rejectionReason"><br>
+</div>
+<input type="submit" ng-click="updateBlogPost()"> <!-- update query/delete query -->
+ 
+</form>
+{{error.message}}

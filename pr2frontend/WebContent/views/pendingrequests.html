@@ -1,0 +1,21 @@
+<div ng-show="pendingrequests.length==0">
+<b>No Pending Requests</b>
+</div>
+<table class="table" ng-show="pendingrequests.length>0">
+<thead>
+<tr>
+<th>username</th>
+<th>profilepic</th>
+<th>accept</th>
+<th>delete</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="pendingrequest in pendingrequests">
+<td>{{pendingrequest.fromId}}</td>
+<td><img src="http://localhost:8085/pr2middleware/getimage/{{pendingrequest.fromId}}"alt="Image Not Available" height="40" width="40"></td>
+<td><a class="btn btn-primary" ng-click="updatePendingRequest(pendingrequest,'A')">Accept</a></td>
+<td><a class="btn btn-danger" ng-click="updatePendingRequest(pendingrequest,'D')">Delete</a></td>
+</tr>
+</tbody>
+</table>

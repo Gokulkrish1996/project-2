@@ -1,0 +1,18 @@
+<table class="table">
+<thead>
+<tr>
+<td>Firstname</td>
+<td>Lastname</td>
+<td>Profile Pic</td>
+<td>Action</td>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="user in suggestedusers">
+<td>{{user.firstname}}</td>
+<td>{{user.lasttname}}</td>
+<td><img src="http://localhost:8085/pr2middleware/getimage/{{currentUser.username}}"alt="Image Not Available" height="60" width="60"></td>
+<td><a href="" ng-click="addFriendRequest(user.username)" class="btn btn-primary">Send Friend Request</a></td>
+</tr>
+</tbody>
+</table>
